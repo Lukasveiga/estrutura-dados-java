@@ -10,6 +10,8 @@ public class Aula12 {
 
         arraylist.add("A");
         arraylist.add("B");
+        arraylist.add("B");
+        arraylist.add("B");
 
         System.out.println(arraylist);
         System.out.println(arraylist.stream().anyMatch("a"::equalsIgnoreCase));

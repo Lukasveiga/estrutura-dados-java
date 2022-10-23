@@ -11,6 +11,12 @@ public class VetorGenerico <T> {
         this.tamanho = 0;
     }
 
+    @SuppressWarnings("unchecked")
+    public VetorGenerico() {
+        this.elementos = (T[]) new Object[10];
+        this.tamanho = 0;
+    }
+
     public boolean adiciona(T elemento){
         this.aumentaCapacidade();
         if (this.tamanho < this.elementos.length) {
@@ -37,7 +43,7 @@ public class VetorGenerico <T> {
     }
 
     public void remove(T elemento){
-        int posicao = buscaElemento(elemento);
+        int posicao = buscaIndex(elemento);
 
         if (!(posicao >= 0 && posicao < this.tamanho)) {
             throw new IllegalArgumentException("Posição inválida");
@@ -65,22 +71,44 @@ public class VetorGenerico <T> {
         return this.tamanho;
     }
 
-    public T busca(int posicao) {
-
-        if (!(posicao >= 0 && posicao < this.tamanho)) {
-            throw new IllegalArgumentException("Posição inválida");
-        }
-
-        return this.elementos[posicao];
-    }
-
-    public int buscaElemento(T object) {
+    public int buscaIndex(T object) {
         for (int i = 0; i < this.tamanho; i++) {
             if (this.elementos[i].equals(object)) { 
                 return i;
             }
         }
         return -1;
+    }
+
+    public T buscaElementoIndex(int posicao) {
+        if (posicao >= 0 && posicao < this.tamanho) {
+            return this.elementos[posicao];
+        } else {
+            return null;
+        }
+    }
+
+    public boolean buscaElemento(T object) {
+        for (int i = 0; i < this.tamanho; i++) {
+            if (this.elementos[i].equals(object)) { 
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int ultimoIndice(T object) {
+        for (int i = this.tamanho - 1; i >= 0; i--) {
+            if (this.elementos[i].equals(object)) {
+                return i;
+            } 
+        }
+        return -1;
+    }
+
+    @SuppressWarnings("unchecked")
+    public void limpar() {
+        this.elementos = (T[]) new Object[this.elementos.length];
     }
 
     @Override
