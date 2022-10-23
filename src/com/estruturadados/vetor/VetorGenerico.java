@@ -5,6 +5,7 @@ public class VetorGenerico <T> {
     private T[] elementos;
     private int tamanho;
 
+    @SuppressWarnings("unchecked")
     public VetorGenerico(int capacidade) {
         this.elementos = (T[]) new Object[capacidade];
         this.tamanho = 0;
@@ -49,6 +50,7 @@ public class VetorGenerico <T> {
 
     }
 
+    @SuppressWarnings("unchecked")
     private void aumentaCapacidade() {
         if (this.tamanho == this.elementos.length) {
             T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];
