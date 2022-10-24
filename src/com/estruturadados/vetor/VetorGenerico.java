@@ -106,7 +106,7 @@ public class VetorGenerico <T> {
         return -1;
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")                      
     public void limpar() {
         this.elementos = (T[]) new Object[this.elementos.length];
     }
