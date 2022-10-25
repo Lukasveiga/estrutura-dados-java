@@ -28,13 +28,16 @@ public class Paciente implements Comparable<Paciente>{
 
     @Override
     public int compareTo(Paciente o) {
-       
-        if (this.prioridade > o.getPrioridade()){
+
+        if (this.prioridade > o.getPrioridade()) {
             return 1;
         } else if (this.prioridade < o.getPrioridade()) {
             return -1;
         }
         return 0;
+
+        // return Integer.valueOf(this.prioridade).compareTo(o.getPrioridade());
+
     }
 
     @Override
