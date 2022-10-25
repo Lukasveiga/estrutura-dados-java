@@ -13,6 +13,12 @@ public class Ex05 {
         } else {
             System.out.println(word + " não é um palíndromo.");
         }
+
+        if(isPalindrome2(word)){
+            System.out.println(word + " é um palíndromo.");
+        } else {
+            System.out.println(word + " não é um palíndromo.");
+        }
         
     }
 
@@ -38,6 +44,22 @@ public class Ex05 {
         }
 
         return stack.equals(stack2);
+    }
+
+    static boolean isPalindrome2(String word) {
+
+        Stack<Character> stack = new Stack<>();
+
+        for (int i = 0; i < word.length(); i++) {
+            stack.push(word.charAt(i));
+        }
+
+        String inverseWord = "";
+        while (!stack.empty()) {
+            inverseWord += stack.pop();
+        }
+
+        return word.equalsIgnoreCase(inverseWord);
     }
     
 }
