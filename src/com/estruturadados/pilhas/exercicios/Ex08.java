@@ -9,7 +9,7 @@ public class Ex08 {
         Stack<Integer> original = new Stack<>();
         Stack<Integer> destino = new Stack<>();
         Stack<Integer> auxiliar = new Stack<>();
-
+        
         original.push(3);
         original.push(2);
         original.push(1);
