@@ -27,19 +27,4 @@ public class Senha{// implements Comparable<Senha>{
     public void setPrioridade(int prioridade) {
         this.prioridade = prioridade;
     }
-
-    //@Override
-    //public int compareTo(Senha o) {
-    //    
-    //    if (this.prioridade > o.getPrioridade()) {
-    //        return 1;
-    //    } else if (this.prioridade < o.getPrioridade()) {
-    //        return -1;
-    //    }
-//
-    //    return 0;
-    //}
-
-    
-    
 }
